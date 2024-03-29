@@ -14,7 +14,7 @@ function Projects(props) {
             name: "Todo Uni",
             image: todouni,
             description:
-                "Responsive web app created to manage University tasks due dissatisfaction with current systems. Allows users to observe their progress throughout the term and 'gamify' their productivity.",
+                "Responsive web app created to manage University tasks due to dissatisfaction with current systems. Allows users to observe their progress throughout the term and 'gamify' their productivity.",
             tech: "React, Javascript, HTML, CSS",
             link: "https://flynnlambrechts.github.io/Todouni/",
             code: "https://github.com/flynnlambrechts/Todouni",
@@ -48,7 +48,7 @@ function Projects(props) {
         {
             name: "Shift Reminder",
             description:
-                "Program that uses the Google sheets API to scrape casual work shifts from roster, and then the Google Calendar API to create calender events with the details of these shifts. After completion adds shifts to a log book.",
+                "Program that uses the Google Sheets API to scrape casual work shifts from roster, and then the Google Calendar API to create calender events with the details of these shifts. After completion adds shifts to a log book.",
             image: shiftreminder,
             code: "https://github.com/flynnlambrechts/Shift-Reminder",
             tech: "Python, Google Calendar API, Google Sheets API",
@@ -58,7 +58,7 @@ function Projects(props) {
         <>
             <Container
                 id="projects"
-                sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                sx={{ display: "flex", flexDirection: "column", gap: 1, marginTop: "100px" }}>
                 <Typography variant="h4">Projects</Typography>
                 {projects.map((proj) => (
                     <Project {...proj} />

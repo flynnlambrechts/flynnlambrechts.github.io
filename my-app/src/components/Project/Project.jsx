@@ -11,32 +11,39 @@ import Box from "@mui/material/Box";
 
 function Project(props) {
     return (
-        <Card >
+        <Card>
             <Anchor href={props.link}>
                 <CardHeader title={props.name} />
             </Anchor>
             <Box sx={{ display: "flex" }}>
-
-            <CardMedia
-                component="img"
-                image={props.image}
-                alt={"Image of " + props.name + " project"}
-                sx={{width: "60%"}}
+                <CardMedia
+                    component="img"
+                    image={props.image}
+                    alt={"Image of " + props.name + " project"}
+                    sx={{ width: "60%" }}
                 />
 
                 <CardContent>
                     <Typography variant="h6">About</Typography>
                     <Typography variant="body1">{props.description}</Typography>
-                    <Typography variant="h6" sx={{marginTop: 1}}>Technologies</Typography>
+                    <Typography variant="h6" sx={{ marginTop: 1 }}>
+                        Technologies
+                    </Typography>
                     <Typography variant="body1">{props.tech}</Typography>
                 </CardContent>
-
             </Box>
-            <Box sx={{display: "flex", flexDirection: "row-reverse"}}>
-
+            <Box sx={{ display: "flex", flexDirection: "row-reverse" }}>
                 <CardActions>
-                    {props.code && <Button size="large">Code</Button>}
-                    {props.link && <Button size="large">View</Button>}
+                    {props.code && (
+                        <Anchor href={props.code}>
+                            <Button size="large">Code</Button>
+                        </Anchor>
+                    )}
+                    {props.link && (
+                        <Anchor href={props.link}>
+                            <Button size="large">View</Button>
+                        </Anchor>
+                    )}
                 </CardActions>
             </Box>
         </Card>

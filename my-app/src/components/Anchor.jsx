@@ -13,8 +13,6 @@ function Anchor(props) {
     const style = {
         textDecoration: "inherit",
         color: "inherit",
-        backgroundColor: isHover ? "lightblue" : "rgb(0, 191, 255)",
-
     };
 
     return (

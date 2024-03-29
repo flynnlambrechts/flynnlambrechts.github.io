@@ -19,7 +19,7 @@ import LanguageLogo from '../components/LanguageLogo';
 import { Container } from '@mui/material';
 function Skills (props) {
 
-    return (<Container>
+    return (<Container sx={{marginTop: "100px"}}>
         <Typography variant="h4">Skills</Typography>
         <LanguageLogo alt="c" src={clogo}/>
         <LanguageLogo alt="c++" src={cpplogo}/>
@@ -33,7 +33,7 @@ function Skills (props) {
         <LanguageLogo alt="git" src={gitlogo}/>
         <LanguageLogo alt="html" src={htmllogo}/>
         <LanguageLogo alt="verilog" src={veriloglogo}/>
-        <FontAwesomeIcon style={{height: "1000"}} icon="fa-brands fa-rust" />
+        <FontAwesomeIcon style={{height: "1000", }} icon="fa-brands fa-rust" />
     </Container>);	
 }
 

@@ -12,7 +12,7 @@ function Navbar(props) {
     return (
         <Box>
             <AppBar
-                position="static"
+                position="fixed"
                 sx={{
                     padding: 1,
                     display: "flex",
