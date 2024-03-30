@@ -33,6 +33,7 @@ function Home(props) {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                    
                 }}>
                 <Box
                     sx={{
@@ -54,6 +55,7 @@ function Home(props) {
                         <Typography variant="h6">Hi,</Typography>
                         <Typography variant="h3">I'm Flynn</Typography>
                         <Typography variant="h6">
+                            &nbsp;
                             <Typewriter
                                 text="A Mechatronic Engineering and Computer Science Student"
                                 delay={100}

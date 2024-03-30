@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 function Navbar(props) {
     const pages = ["Projects", "Skills"];
     return (
-        <Box>
             <AppBar
                 position="fixed"
                 sx={{
@@ -19,24 +18,32 @@ function Navbar(props) {
                     alignItems: "center",
                     flexDirection: "row",
                     justifyContent: "space-between",
-                    flexWrap: "wrap"
+                    flexWrap: "wrap",
+                    backgroundColor: "default",
                 }}>
-                <Toolbar sx={{ display: "flex", gap: 4 }} width="100px">
-                    <Socials />
-                    <Link to="/" style={{ textDecoration: "none", color: "unset" }}>
-                    <Typography
-                        variant="h4"
-                        component="div"
-                        sx={{ flexGrow: 1 }}>
-                        Flynn Lambrechts
-                    </Typography>
+                    <Toolbar sx={{ display: "flex", gap: 4 }} width="100px">
+                        <Socials />
+                        <Link
+                            to="/"
+                            style={{ textDecoration: "none", color: "unset" }}>
+                            <Typography
+                                variant="h4"
+                                component="div"
+                                sx={{ flexGrow: 1 }}>
+                                Flynn Lambrechts
+                            </Typography>
                         </Link>
-                </Toolbar>
+                    </Toolbar>
 
                 <Box sx={{ display: "flex", gap: 3 }}>
                     <Box sx={{ display: "flex", gap: 3 }}>
                         {pages.map((page) => (
-                            <Link to={"/" + page.toLowerCase()} style={{ textDecoration: "none", color: "unset" }}>
+                            <Link
+                                to={"/" + page.toLowerCase()}
+                                style={{
+                                    textDecoration: "none",
+                                    color: "unset",
+                                }}>
                                 <Typography
                                     variant="h6"
                                     key={page}
@@ -49,7 +56,6 @@ function Navbar(props) {
                     <NightModeToggle />
                 </Box>
             </AppBar>
-        </Box>
     );
 }
 

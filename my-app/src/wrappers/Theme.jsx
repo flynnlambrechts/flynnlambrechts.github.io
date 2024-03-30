@@ -29,10 +29,10 @@ function ThemeModeController(props) {
                     secondary: {
                         main: "#CB1532",
                     },
-                    // background: {
-                    //     "paper": "#121212",
-                    //     "default": "#121212"
-                    // }
+                    background: {
+                        paper: mode === "dark" && "#030b12",
+                        // "default": "#121212"
+                    }
                 },
                 typography: {
                     fontFamily: [
