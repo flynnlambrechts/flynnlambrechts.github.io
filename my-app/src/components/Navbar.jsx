@@ -8,7 +8,7 @@ import Socials from "./Socials";
 import { Link } from "react-router-dom";
 
 function Navbar(props) {
-    const pages = ["Projects", "Skills"];
+    const pages = ["Projects", "Skills", "Tools"];
     return (
             <AppBar
                 position="fixed"

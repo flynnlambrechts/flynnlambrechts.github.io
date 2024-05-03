@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Typography } from "@mui/material";
 import Project from "../components/Project/Project";
 
 import todouni from "../assets/projects/todouni.png";
@@ -14,9 +13,10 @@ function Projects(props) {
         {
             name: "Todo Uni",
             image: todouni,
+            date: "2024",
             description:
                 "Responsive web app created to manage University tasks due to dissatisfaction with current systems. Allows users to observe their progress throughout the term and 'gamify' their productivity.",
-            tech: ["React", "Javascript", "HTML", "CSS"],
+            tech: ["React", "JavaScript", "HTML", "CSS", "MUI", "Github Pages"],
             link: "https://flynnlambrechts.github.io/Todouni/",
             code: "https://github.com/flynnlambrechts/Todouni",
         },
@@ -25,7 +25,7 @@ function Projects(props) {
             image: jobsboard,
             description:
                 "As Project Director of 'Jobsboard' at UNSW Software Development Society (DevSoc) I led a team of 7 responsible for maintenance and improvement of the platform.",
-            tech: ["React", "Typescript", "HTML", "Express", "CSS"],
+            tech: ["React", "TypeScript", "HTML", "Next JS", "CSS", "Postgres", "Yarn"],
             link: "https://jobsboard.csesoc.unsw.edu.au/",
             code: "https://github.com/devsoc-unsw/jobsboard",
         },
@@ -36,7 +36,7 @@ function Projects(props) {
             description:
                 "A facebook messenger chat bot. I created this project with no coding experience. It is a backend project that provides the facebook messenger api with information based on user requests for current meal service at UNSW Dining Hall. Upon my completion of my time at Basser College, the project had over 890 users and hundreds of daily users.",
             link: "https://www.facebook.com/BssrBot1",
-            tech: ["Python", "Heroku Cloud Hosting", "Facebook Messenger API"],
+            tech: ["Python", "Heroku", "Postgres", "Flask", "Messenger"],
             code: "https://github.com/flynnlambrechts/bssrbot3",
         },
         {
@@ -45,7 +45,7 @@ function Projects(props) {
             code: "https://github.com/flynnlambrechts/cselink",
             description:
                 "A command line tool for UNSW CSE Students. This enables local development with ease of access to cse programs like 'autotest' and 'give'. Providing users with access to the comfort of their own programming environment and the ability to work offline and sync later.",
-            tech: ["Shell Scripting", "Bash", "rsync", "ssh"],
+            tech: ["Shell"],
         },
         {
             name: "Shift Reminder",
@@ -53,7 +53,7 @@ function Projects(props) {
                 "Program that uses the Google Sheets API to scrape casual work shifts from roster, and then the Google Calendar API to create calender events with the details of these shifts. After completion adds shifts to a log book.",
             image: shiftreminder,
             code: "https://github.com/flynnlambrechts/Shift-Reminder",
-            tech: ["Python", "Google Calendar API", "Google Sheets API"],
+            tech: ["Python", "Replit", "Google Sheets", "Google Calendar"],
         },
     ];
     return (

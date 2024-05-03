@@ -10,6 +10,7 @@ import Home from "./Home";
 import ThemeModeController from "../wrappers/Theme";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import Tools from "./Tools";
 
 
 function PageList() {
@@ -27,6 +28,7 @@ function PageList() {
                             <Route path="/" element={<Home />} />
                             <Route path="/projects" element={<Projects />} />
                             <Route path="/skills" element={<Skills />} />
+                            <Route path="/tools" element={<Tools />} />
                             <Route path="/Todouni" />
                             {/* <Route path='/list' element={<ListView />} /> */}
                         </Routes>

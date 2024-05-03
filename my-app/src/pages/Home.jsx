@@ -4,27 +4,68 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import Box from "@mui/material/Box";
 
-const Typewriter = ({ text, delay }) => {
-    const [currentText, setCurrentText] = useState(" ");
+
+
+
+// const Typewriter = ({ text, delay }) => {
+//     const [currentText, setCurrentText] = useState("");
+//     const [currentIndex, setCurrentIndex] = useState(0);
+
+//     useEffect(() => {
+//         if (currentIndex < text.length) {
+//             const timeout = setTimeout(() => {
+//                 setCurrentText((prevText) => prevText + text[currentIndex]);
+//                 setCurrentIndex((prevIndex) => prevIndex + 1);
+//             }, delay);
+
+//             return () => clearTimeout(timeout);
+//         }
+//     }, [currentIndex, delay, text]);
+
+//     return <span>{currentText}</span>;
+// };
+
+const Typewriter = ({ lines, delay }) => {
+    const [currentText, setCurrentText] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
-
+    const [lineIndex, setLineIndex] = useState(0);
+  
     useEffect(() => {
-        if (currentIndex < text.length) {
-            const timeout = setTimeout(() => {
-                setCurrentText((prevText) => prevText + text[currentIndex]);
-                setCurrentIndex((prevIndex) => prevIndex + 1);
-            }, delay);
-
-            return () => clearTimeout(timeout);
+      if (lineIndex < lines.length) {
+        if (currentIndex < lines[lineIndex].length) {
+          const timeout = setTimeout(() => {
+            setCurrentText((prevText) => prevText + lines[lineIndex][currentIndex]);
+            setCurrentIndex((prevIndex) => prevIndex + 1);
+          }, delay);
+  
+          return () => clearTimeout(timeout);
+        } else if (lineIndex !== lines.length - 1) {
+          setTimeout(() => {
+            setCurrentText("");
+            setCurrentIndex(0);
+            setLineIndex((prevLineIndex) => prevLineIndex + 1);
+          }, 2000);
         }
-    }, [currentIndex, delay, text]);
-
+      }
+    }, [currentIndex, delay, lineIndex, lines]);
+  
     return <span>{currentText}</span>;
-};
+  };
 
 function Home(props) {
+    const prints = [
+        "print(intro)",
+        "std::cout << intro << std::endl;",
+        "System.out.println(intro);",
+        "echo \"$intro\"",
+        "println!(\"{}\", intro);",
+        "console.log(intro);",
+        "printf(\"%s\\n\", intro);"
+    ]
+
     return (
         <>
+
             <Container
                 maxWidth="unset"
                 sx={{
@@ -57,7 +98,7 @@ function Home(props) {
                         <Typography variant="h6">
                             &nbsp;
                             <Typewriter
-                                text="A Mechatronic Engineering and Computer Science Student"
+                                lines={ [ "> " + prints[Math.round((Math.random() * 10)) % prints.length ], "A Mechatronic Engineering and Computer Science Student"]}
                                 delay={100}
                             />
                         </Typography>
@@ -65,6 +106,8 @@ function Home(props) {
                 </Box>
                 <Box>Scroll For More...</Box>
             </Container>
+            <div>
+        </div>
             <Projects />
             <Skills />
         </>
