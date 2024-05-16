@@ -7,16 +7,14 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Unstable_Grid2";
 
-import {
-    CardContent,
-} from "@mui/material";
+import { CardContent } from "@mui/material";
 import Anchor from "../Anchor";
 import Box from "@mui/material/Box";
 import TechIcon from "../TechIcon";
 
 const Technologies = (props) => {
     return (
-        <Box sx={{display: "flex", flexWrap: "wrap", gap: 1}}>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
             {props.tech.map((t) => (
                 <TechIcon name={t} />
             ))}
@@ -24,9 +22,24 @@ const Technologies = (props) => {
     );
 };
 
+function LinkButton({ link, name }) {
+    return (
+        <Anchor href={link}>
+            <Button variant="outlined" size="large">
+                {name}
+            </Button>
+        </Anchor>
+    );
+}
+
 function Project(props) {
     return (
-        <Card sx={{display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
+        <Card
+            sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+            }}>
             <Grid container spacing={1}>
                 <Grid xs={12}>
                     <Anchor href={props.link}>
@@ -34,7 +47,10 @@ function Project(props) {
                     </Anchor>
                 </Grid>
 
-                <Grid sm={12} md={7} sx={{display: "flex", justifyContent: "center"}}>
+                <Grid
+                    sm={12}
+                    md={7}
+                    sx={{ display: "flex", justifyContent: "center" }}>
                     <CardMedia
                         component="img"
                         image={props.image}
@@ -57,29 +73,32 @@ function Project(props) {
                             Technologies
                         </Typography>
                         <Technologies tech={props.tech} />
-                        <Typography variant="body1">
-                            
-                        </Typography>
+                        <Typography variant="body1"></Typography>
                     </CardContent>
                 </Grid>
                 <Grid xs={12}>
-
-                <Box sx={{ display: "flex", flexDirection: "row-reverse" }}>
-                    <CardActions>
-                        {props.code && (
-                            <Anchor href={props.code}>
-                                <Button variant="outlined" size="large">Code</Button>
-                            </Anchor>
-                        )}
-                        {props.link && (
-                            <Anchor href={props.link}>
-                                <Button variant="outlined"  size="large">View</Button>
-                            </Anchor>)
-                        }
-                    </CardActions>
-                </Box>
-                        </Grid>
-                    
+                    <Box sx={{ display: "flex", flexDirection: "row-reverse" }}>
+                        <CardActions>
+                            {props.buttons &&
+                                Object.keys(props.buttons).map((buttonName) => (
+                                    <LinkButton
+                                        name={buttonName}
+                                        link={props.buttons[buttonName]}
+                                    />
+                                ))}
+                            {props.code && (
+                                <LinkButton name="Code" link={props.code} />
+                            )}
+                            {props.link && (
+                                <Anchor href={props.link}>
+                                    <Button variant="outlined" size="large">
+                                        View
+                                    </Button>
+                                </Anchor>
+                            )}
+                        </CardActions>
+                    </Box>
+                </Grid>
             </Grid>
         </Card>
     );

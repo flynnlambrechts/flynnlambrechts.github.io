@@ -122,13 +122,22 @@ const icons_details = {
         color: "34A853",
         logo: "googlesheets",
     },
+    "Next JS": {
+        name: "Next JS",
+        color: "000000",
+        logo: "nextdotjs",
+    },
 };
 
 function TechIcon(props) {
     // https://github.com/simple-icons/simple-icons/blob/develop/slugs.md
     // https://simpleicons.org/
     const getUrl = (details) =>
-        `https://img.shields.io/badge/${details.name}-%23${details.color}.svg?style=for-the-badge&logo=${details.logo}&logoColor=%23${details.logo_color || "FFFFFF"}`;
+        `https://img.shields.io/badge/${details.name}-%23${
+            details.color
+        }.svg?style=for-the-badge&logo=${details.logo}&logoColor=%23${
+            details.logo_color || "FFFFFF"
+        }`;
 
     return (
         <>

@@ -2,6 +2,7 @@ import React from "react";
 import Project from "../components/Project/Project";
 
 import todouni from "../assets/projects/todouni.png";
+import bananagrams from "../assets/projects/bananagrams.png";
 import shiftreminder from "../assets/projects/shiftreminder.png";
 import bssrbot from "../assets/projects/BssrBot.png";
 import cselink from "../assets/projects/cselink.png";
@@ -10,6 +11,20 @@ import Section from "../components/Section";
 
 function Projects(props) {
     const projects = [
+        {
+            name: "Bananagrams Engine",
+            image: bananagrams,
+            date: "2024",
+            description:
+                "For the UNSW Course COMP3821 (Advanced Algorithm Design and Analysis) we built an Engine to play the board game 'Bananagrams'. To better showcase the engine I built a frontend for this.",
+            tech: ["React", "JavaScript", "Python", "HTML", "CSS", "Next JS"],
+            buttons: {
+                Frontend: "https://github.com/flynnlambrechts/bananagrams-demo",
+                Backend:
+                    "https://github.com/flynnlambrechts/bananagrams_engine_comp3821/tree/main",
+                View: "https://flynnlambrechts.github.io/bananagrams-demo/",
+            },
+        },
         {
             name: "Todo Uni",
             image: todouni,
@@ -25,7 +40,15 @@ function Projects(props) {
             image: jobsboard,
             description:
                 "As Project Director of 'Jobsboard' at UNSW Software Development Society (DevSoc) I led a team of 7 responsible for maintenance and improvement of the platform.",
-            tech: ["React", "TypeScript", "HTML", "Next JS", "CSS", "Postgres", "Yarn"],
+            tech: [
+                "React",
+                "TypeScript",
+                "HTML",
+                "Next JS",
+                "CSS",
+                "Postgres",
+                "Yarn",
+            ],
             link: "https://jobsboard.csesoc.unsw.edu.au/",
             code: "https://github.com/devsoc-unsw/jobsboard",
         },
