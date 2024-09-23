@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[991],{991:(p,a,s)=>{p.exports=s.p+"static/media/convolutions.cd74d7398a37cb0b35ab.md"}}]);
